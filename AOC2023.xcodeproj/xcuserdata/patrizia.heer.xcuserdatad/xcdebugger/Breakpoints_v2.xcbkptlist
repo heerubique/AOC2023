@@ -3,4 +3,84 @@
    uuid = "8035F57A-1822-4BAD-9D47-B643D3F4D92C"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "25F03F1C-2206-4B44-B626-FD6475B9D06D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AOC2023/AOC1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "matchesWithWords(for:in:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "25F03F1C-2206-4B44-B626-FD6475B9D06D - 42ee8acd9b2d3f3b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AOC2023.AOC1.matches(for: _StringProcessing.Regex&lt;(Swift.Substring, Swift.Substring)&gt;, in: Swift.String) -&gt; Swift.Optional&lt;(Swift.String, Swift.String)&gt;"
+                  moduleName = "AOC2023"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patrizia.heer/Documents/Projekte/AOC2023/AOC2023/AOC1.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "1680">
+               </Location>
+               <Location
+                  uuid = "25F03F1C-2206-4B44-B626-FD6475B9D06D - 43ac1bf313666c12"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AOC2023.AOC1.matchesWithWords(for: _StringProcessing.Regex&lt;(Swift.Substring, Swift.Substring)&gt;, in: Swift.String) -&gt; Swift.Optional&lt;(Swift.String, Swift.String)&gt;"
+                  moduleName = "AOC2023"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patrizia.heer/Documents/Projekte/AOC2023/AOC2023/AOC1.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "1680">
+               </Location>
+               <Location
+                  uuid = "25F03F1C-2206-4B44-B626-FD6475B9D06D - 43ac1bf313666cd0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AOC2023.AOC1.matchesWithWords(for: _StringProcessing.Regex&lt;(Swift.Substring, Swift.Substring)&gt;, in: Swift.String) -&gt; Swift.Optional&lt;(Swift.String, Swift.String)&gt;"
+                  moduleName = "AOC2023"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patrizia.heer/Documents/Projekte/AOC2023/AOC2023/AOC1.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "1680">
+               </Location>
+               <Location
+                  uuid = "25F03F1C-2206-4B44-B626-FD6475B9D06D - 43ac1bf313666c96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AOC2023.AOC1.matchesWithWords(for: _StringProcessing.Regex&lt;(Swift.Substring, Swift.Substring)&gt;, in: Swift.String) -&gt; Swift.Optional&lt;(Swift.String, Swift.String)&gt;"
+                  moduleName = "AOC2023"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patrizia.heer/Documents/Projekte/AOC2023/AOC2023/AOC1.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "1680">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

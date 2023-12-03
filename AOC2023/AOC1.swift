@@ -11,11 +11,26 @@ final class AOC1 {
 
     func run() {
 
+        secondPart()
+/*
+        var sumOverall: Int = 0
         var sum: Int = 0
 
         for input in inputLines.split(separator: "\n") {
             print(input)
             let regex = /^[^\d]*(\d{1})/
+            let regexWords = /(^a(?=\s)|one|two|three|four|five|six|seven|eight|nine|[0-9]{1})/
+
+            if let (first, second) = matchesWithWords(for: regexWords, in: String(input)) {
+                let firstString = castWordToNumber(for: first)
+                let secondString = castWordToNumber(for: second)
+                let numberString = firstString + secondString
+                print("new \(numberString)")
+                sumOverall += Int(numberString) ?? 0
+            } else {
+                print("asf")
+            }
+
             if let firstNumberString = matches(for: regex, in: String(input)) {
                 let reverted = String(input.reversed())
                 var secondNumberString: String
@@ -30,12 +45,78 @@ final class AOC1 {
             }
         }
 
-        print("Result ist \(sum)")
+        print("Result is \(sum)")
+        print("Result with Words: \(sumOverall)")*/
     }
 
     func matches(for regex: Regex<(Substring, Substring)>, in text: String) -> String? {
         if let result = text.firstMatch(of: regex) {
             return String(result.output.1)
+        }
+
+        return nil
+    }
+
+    func matchesWithWords(for regex: Regex<(Substring, Substring)>, in text: String) -> (String, String)? {
+        let results = text.matches(of: regex)
+        if let firstResult = results.first, let lastResult = results.last {
+            return (String(firstResult.output.1), String(lastResult.output.1))
+        }
+
+        return nil
+    }
+
+    func castWordToNumber(for input: String) -> String {
+        switch (input) {
+            case "one": return "1"
+            case "two": return "2"
+            case "three": return "3"
+            case "four": return "4"
+            case "five": return "5"
+            case "six": return "6"
+            case "seven": return "7"
+            case "eight": return "8"
+            case "nine": return "9"
+            default: return input
+        }
+
+    }
+
+    func secondPart() {
+        var sum: Int = 0
+
+        for input in inputLines.split(separator: "\n") {
+            print(input)
+            if let first = find(for: String(input), last: false), let second = find(for: String(input), last: true) {
+                let firstString = castWordToNumber(for: first)
+                let secondString = castWordToNumber(for: second)
+                let numberString = firstString + secondString
+                print("new \(numberString)")
+                sum += Int(numberString) ?? 0
+            }
+        }
+        
+        print("Result is \(sum)")
+    }
+
+    var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "one", "two","three","four","five","six","seven","eight","nine"]
+
+    func find(for text: String, last: Bool = true) -> String? {
+        var foundRange: Range<String.Index>?
+
+        for number in numbers {
+
+            if number == "eight" && text == "        2rzvpfpgzxk3863eightoneighttbb" {
+                print("a")
+            }
+
+            if let range = text.range(of: number, options: !last ? .caseInsensitive : .backwards), (foundRange == nil || (foundRange!.upperBound < range.upperBound && last) || (!last && foundRange!.lowerBound > range.lowerBound)) {
+                foundRange = range
+            }
+        }
+
+        if let foundRange {
+            return String(text[foundRange])
         }
 
         return nil
