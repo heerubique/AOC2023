@@ -9,4 +9,4 @@ import Foundation
 
 print("Hello, World!")
 
-AOC3().run()
+AOC6().run()
