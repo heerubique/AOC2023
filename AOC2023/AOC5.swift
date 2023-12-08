@@ -10,33 +10,47 @@ import Foundation
 class AOC5 {
     func run() -> String {
 
-        /*seedToSoilMap = createMap(for: seedToSoil)
-        soilToFertilizerMap = createMap(for: soilToFertilizer)
-        fertilizerToWaterMap = createMap(for: fertilizerToWater)
-        waterToLightMap = createMap(for: waterToLight)
-        lightToTemperstureMap = createMap(for: lightToTemperature)
-        temperatureToHumidityMap = createMap(for: temperatureToHumidity)
-        humidityToLocationMap = createMap(for: humidityToLocation)*/
 
         var lowestLoc: Int64 = 0
         let seedComponents = seeds.components(separatedBy: " ")
 
+        prepareData()
+
         var i = 0
+/*
+        for seedComponent in seedComponents {
+            let seed = Int64(seedComponent) ?? 0
+
+            let soil = getDestination(for: seedToSoilMap, sourceInput: seed)
+            let fertilizer = getDestination(for: soilToFertilizerMap, sourceInput: soil)
+            let water = getDestination(for: fertilizerToWaterMap, sourceInput: fertilizer)
+            let light = getDestination(for: waterToLightMap, sourceInput: water)
+            let temp = getDestination(for: lightToTemperstureMap, sourceInput: light)
+            let humi = getDestination(for: temperatureToHumidityMap, sourceInput: temp)
+            let loc = getDestination(for: humidityToLocationMap, sourceInput: humi)
+            //print("seed \(start+i) soil: \(soil) fertilizer: \(fertilizer) water: \(water) light: \(light) temp: \(temp) humi: \(humi) loc: \(loc)")
+            if lowestLoc == 0 || lowestLoc > loc {
+                lowestLoc = loc
+            }
+
+        }
+
+        print(lowestLoc)*/
+
+        i = 0
         while i < seedComponents.count {
 
             let start = Int64(seedComponents[i]) ?? 0
             let count = Int64(seedComponents[i+1]) ?? 0
 
             for i in 0..<count {
-                //seeds.append(start+i)
-
-                let soil = getDestination(for: seedToSoil, sourceInput: start+i)
-                let fertilizer = getDestination(for: soilToFertilizer, sourceInput: soil)
-                let water = getDestination(for: fertilizerToWater, sourceInput: fertilizer)
-                let light = getDestination(for: waterToLight, sourceInput: water)
-                let temp = getDestination(for: lightToTemperature, sourceInput: light)
-                let humi = getDestination(for: temperatureToHumidity, sourceInput: temp)
-                let loc = getDestination(for: humidityToLocation, sourceInput: humi)
+                let soil = getDestination(for: seedToSoilMap, sourceInput: start+i)
+                let fertilizer = getDestination(for: soilToFertilizerMap, sourceInput: soil)
+                let water = getDestination(for: fertilizerToWaterMap, sourceInput: fertilizer)
+                let light = getDestination(for: waterToLightMap, sourceInput: water)
+                let temp = getDestination(for: lightToTemperstureMap, sourceInput: light)
+                let humi = getDestination(for: temperatureToHumidityMap, sourceInput: temp)
+                let loc = getDestination(for: humidityToLocationMap, sourceInput: humi)
                 //print("seed \(start+i) soil: \(soil) fertilizer: \(fertilizer) water: \(water) light: \(light) temp: \(temp) humi: \(humi) loc: \(loc)")
                 if lowestLoc == 0 || lowestLoc > loc {
                     lowestLoc = loc
@@ -54,7 +68,19 @@ class AOC5 {
         return "done"
     }
 
-    func getDestination(for input: String, sourceInput: Int64) -> Int64 {
+    func prepareData() {
+        seedToSoilMap = splitData(for: seedToSoil)
+        soilToFertilizerMap = splitData(for: soilToFertilizer)
+        fertilizerToWaterMap = splitData(for: fertilizerToWater)
+        waterToLightMap = splitData(for: waterToLight)
+        lightToTemperstureMap = splitData(for: lightToTemperature)
+        temperatureToHumidityMap = splitData(for: temperatureToHumidity)
+        humidityToLocationMap = splitData(for: humidityToLocation)
+
+    }
+
+    func splitData(for input: String) -> [Parts] {
+        var result: [Parts] = []
         for line in input.components(separatedBy: "\n") {
             var parts = String(line).components(separatedBy: " ")
             parts = parts.filter { $0.isEmpty == false }
@@ -62,16 +88,25 @@ class AOC5 {
 
 
             if parts.count == 3,
-                let destination = Int64(parts[0]),
-                let source = Int64(parts[1]),
-                let count = Int64(parts[2]) {
-
-                if sourceInput > source && sourceInput < source+count {
-                    let distance = sourceInput - source
-                    return destination + distance
-                }
-
+               let destination = Int64(parts[0]),
+               let source = Int64(parts[1]),
+               let count = Int64(parts[2]) {
+                result.append(Parts(source: source, destination: destination, range: count))
             }
+        }
+
+        return result
+    }
+
+    func getDestination(for input: [Parts], sourceInput: Int64) -> Int64 {
+        for part in input {
+
+            if sourceInput >= part.source && sourceInput < part.source + part.range {
+                let distance = sourceInput - part.source
+                return part.destination + distance
+            }
+
+
 
         }
 
@@ -102,8 +137,8 @@ class AOC5 {
         return destinationInput
     }
 
-    func createMap(for input: String) -> [Int64 : Int64] {
-        var map: [Int64: Int64] = [:]
+    /*func createMap(for input: String) -> [Int64 : Int64] {
+        var map: [Parts] = []
        // print(input)
         for line in input.components(separatedBy: "\n") {
             var parts = String(line).components(separatedBy: " ")
@@ -128,10 +163,58 @@ class AOC5 {
         print(map)
         return map
     }
+*/
 
+    struct Parts {
+        let source: Int64
+        let destination: Int64
+        let range: Int64
+    }
+/*
+    var seeds = "79 14 55 13"
+    var seedToSoilMap : [Parts] = []
+    var seedToSoil = """
+50 98 2
+52 50 48
+"""
 
+    var soilToFertilizerMap : [Parts] = []
+    var soilToFertilizer = """
+0 15 37
+37 52 2
+39 0 15
+"""
+    var fertilizerToWaterMap : [Parts] = []
+    var fertilizerToWater = """
+49 53 8
+0 11 42
+42 0 7
+57 7 4
+"""
+    var waterToLightMap : [Parts] = []
+    var waterToLight = """
+88 18 7
+18 25 70
+"""
+    var lightToTemperstureMap : [Parts] = []
+    var lightToTemperature = """
+45 77 23
+81 45 19
+68 64 13
+"""
+    var temperatureToHumidityMap : [Parts] = []
+    var temperatureToHumidity = """
+0 69 1
+1 0 69
+"""
+    var humidityToLocationMap : [Parts] = []
+    var humidityToLocation = """
+60 56 37
+56 93 4
+"""
+*/
     var seeds = "304740406 53203352 1080760686 52608146 1670978447 367043978 1445830299 58442414 4012995194 104364808 4123691336 167638723 2284615844 178205532 3164519436 564398605 90744016 147784453 577905361 122056749"
-    var seedToSoilMap : [Int64: Int64] = [:]
+    var seedToSoilMap : [Parts] = []
     var seedToSoil = """
     0 699677807 922644641
 4174180469 3833727510 120786827
@@ -147,7 +230,7 @@ class AOC5 {
 2765092713 2225360008 341197258
 """
 
-    var soilToFertilizerMap : [Int64: Int64] = [:]
+    var soilToFertilizerMap : [Parts] = []
     var soilToFertilizer = """
     1916776044 145070025 3464138
 1920240182 0 145070025
@@ -171,7 +254,7 @@ class AOC5 {
 0 1699943051 295069722
 3400660357 2323197697 88422991
 """
-    var fertilizerToWaterMap : [Int64: Int64] = [:]
+    var fertilizerToWaterMap : [Parts] = []
     var fertilizerToWater = """
     3585244197 3493316345 482900943
 2871272496 878061687 456215665
@@ -190,7 +273,7 @@ class AOC5 {
 0 2314192028 109056711
 4068145140 3976217288 211169946
 """
-    var waterToLightMap : [Int64: Int64] = [:]
+    var waterToLightMap : [Parts] = []
     var waterToLight = """
     3841742547 3016842841 17384315
 2875021919 2637593760 185450069
@@ -238,7 +321,7 @@ class AOC5 {
 4081086996 3981409854 5951645
 1580940051 290314834 86825576
 """
-    var lightToTemperstureMap : [Int64: Int64] = [:]
+    var lightToTemperstureMap : [Parts] = []
     var lightToTemperature = """
     2659452899 3773423191 23529065
 1010417677 1830019321 229964714
@@ -288,7 +371,7 @@ class AOC5 {
 4049965000 3019162942 92307690
 2782377315 3171867530 19830200
 """
-    var temperatureToHumidityMap : [Int64: Int64] = [:]
+    var temperatureToHumidityMap : [Parts] = []
     var temperatureToHumidity = """
     1281293605 2434144353 57731817
 3534843655 3623804479 36539813
@@ -314,7 +397,7 @@ class AOC5 {
 3658310977 4080632421 214334875
 2479713329 2201250366 232893987
 """
-    var humidityToLocationMap : [Int64: Int64] = [:]
+    var humidityToLocationMap : [Parts] = []
     var humidityToLocation = """
 0 2359144752 26906322
 26906322 224309687 10153510
@@ -343,5 +426,6 @@ class AOC5 {
 4185175199 3916327360 8885363
 4006820160 3925212723 178355039
 """
+
 }
 

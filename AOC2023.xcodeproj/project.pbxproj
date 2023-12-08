@@ -13,6 +13,8 @@
 		87800F022B1CFB85009170E9 /* AOC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87800F012B1CFB85009170E9 /* AOC3.swift */; };
 		87800F042B1F0011009170E9 /* AOC5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87800F032B1F0011009170E9 /* AOC5.swift */; };
 		87800F062B20540D009170E9 /* AOC6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87800F052B20540D009170E9 /* AOC6.swift */; };
+		87800F082B21A347009170E9 /* AOC7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87800F072B21A347009170E9 /* AOC7.swift */; };
+		87800F1A2B22FC30009170E9 /* AOC8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87800F192B22FC30009170E9 /* AOC8.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +37,8 @@
 		87800F012B1CFB85009170E9 /* AOC3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC3.swift; sourceTree = "<group>"; };
 		87800F032B1F0011009170E9 /* AOC5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC5.swift; sourceTree = "<group>"; };
 		87800F052B20540D009170E9 /* AOC6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC6.swift; sourceTree = "<group>"; };
+		87800F072B21A347009170E9 /* AOC7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC7.swift; sourceTree = "<group>"; };
+		87800F192B22FC30009170E9 /* AOC8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC8.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 				87800F012B1CFB85009170E9 /* AOC3.swift */,
 				87800F032B1F0011009170E9 /* AOC5.swift */,
 				87800F052B20540D009170E9 /* AOC6.swift */,
+				87800F072B21A347009170E9 /* AOC7.swift */,
+				87800F192B22FC30009170E9 /* AOC8.swift */,
 			);
 			path = AOC2023;
 			sourceTree = "<group>";
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87800F1A2B22FC30009170E9 /* AOC8.swift in Sources */,
 				87800F062B20540D009170E9 /* AOC6.swift in Sources */,
 				87800F042B1F0011009170E9 /* AOC5.swift in Sources */,
+				87800F082B21A347009170E9 /* AOC7.swift in Sources */,
 				87800F002B1B1004009170E9 /* AOC2.swift in Sources */,
 				87800EF72B19CA2F009170E9 /* main.swift in Sources */,
 				87800EFE2B19CA72009170E9 /* AOC1.swift in Sources */,
