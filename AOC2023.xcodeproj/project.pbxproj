@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		873F72402B26D94400A329EE /* AOC11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873F723F2B26D94400A329EE /* AOC11.swift */; };
+		873F724F2B26DCB500A329EE /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 873F724E2B26DCB500A329EE /* Collections */; };
+		873F72512B26DCBC00A329EE /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 873F72502B26DCBC00A329EE /* Algorithms */; };
+		873F72532B26DE5600A329EE /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 873F72522B26DE5600A329EE /* DequeModule */; };
+		873F72572B279DF900A329EE /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873F72562B279DF900A329EE /* DataStructures.swift */; };
 		87800EF72B19CA2F009170E9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87800EF62B19CA2F009170E9 /* main.swift */; };
 		87800EFE2B19CA72009170E9 /* AOC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87800EFD2B19CA72009170E9 /* AOC1.swift */; };
 		87800F002B1B1004009170E9 /* AOC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87800EFF2B1B1004009170E9 /* AOC2.swift */; };
@@ -15,6 +20,8 @@
 		87800F062B20540D009170E9 /* AOC6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87800F052B20540D009170E9 /* AOC6.swift */; };
 		87800F082B21A347009170E9 /* AOC7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87800F072B21A347009170E9 /* AOC7.swift */; };
 		87800F1A2B22FC30009170E9 /* AOC8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87800F192B22FC30009170E9 /* AOC8.swift */; };
+		87800F1C2B244127009170E9 /* AOC9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87800F1B2B244127009170E9 /* AOC9.swift */; };
+		87800F1E2B25B0F1009170E9 /* AOC10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87800F1D2B25B0F1009170E9 /* AOC10.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +37,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		873F723F2B26D94400A329EE /* AOC11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC11.swift; sourceTree = "<group>"; };
+		873F72562B279DF900A329EE /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 		87800EF32B19CA2F009170E9 /* AOC2023 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AOC2023; sourceTree = BUILT_PRODUCTS_DIR; };
 		87800EF62B19CA2F009170E9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		87800EFD2B19CA72009170E9 /* AOC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC1.swift; sourceTree = "<group>"; };
@@ -39,6 +48,8 @@
 		87800F052B20540D009170E9 /* AOC6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC6.swift; sourceTree = "<group>"; };
 		87800F072B21A347009170E9 /* AOC7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC7.swift; sourceTree = "<group>"; };
 		87800F192B22FC30009170E9 /* AOC8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC8.swift; sourceTree = "<group>"; };
+		87800F1B2B244127009170E9 /* AOC9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC9.swift; sourceTree = "<group>"; };
+		87800F1D2B25B0F1009170E9 /* AOC10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOC10.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,17 +57,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				873F72512B26DCBC00A329EE /* Algorithms in Frameworks */,
+				873F724F2B26DCB500A329EE /* Collections in Frameworks */,
+				873F72532B26DE5600A329EE /* DequeModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		873F724D2B26DCB500A329EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		87800EEA2B19CA2F009170E9 = {
 			isa = PBXGroup;
 			children = (
 				87800EF52B19CA2F009170E9 /* AOC2023 */,
 				87800EF42B19CA2F009170E9 /* Products */,
+				873F724D2B26DCB500A329EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +101,10 @@
 				87800F052B20540D009170E9 /* AOC6.swift */,
 				87800F072B21A347009170E9 /* AOC7.swift */,
 				87800F192B22FC30009170E9 /* AOC8.swift */,
+				87800F1B2B244127009170E9 /* AOC9.swift */,
+				87800F1D2B25B0F1009170E9 /* AOC10.swift */,
+				873F723F2B26D94400A329EE /* AOC11.swift */,
+				873F72562B279DF900A329EE /* DataStructures.swift */,
 			);
 			path = AOC2023;
 			sourceTree = "<group>";
@@ -99,6 +125,11 @@
 			dependencies = (
 			);
 			name = AOC2023;
+			packageProductDependencies = (
+				873F724E2B26DCB500A329EE /* Collections */,
+				873F72502B26DCBC00A329EE /* Algorithms */,
+				873F72522B26DE5600A329EE /* DequeModule */,
+			);
 			productName = AOC2023;
 			productReference = 87800EF32B19CA2F009170E9 /* AOC2023 */;
 			productType = "com.apple.product-type.tool";
@@ -127,6 +158,10 @@
 				Base,
 			);
 			mainGroup = 87800EEA2B19CA2F009170E9;
+			packageReferences = (
+				873F72432B26DAA800A329EE /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				873F72462B26DAB900A329EE /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = 87800EF42B19CA2F009170E9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,12 +176,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87800F1C2B244127009170E9 /* AOC9.swift in Sources */,
 				87800F1A2B22FC30009170E9 /* AOC8.swift in Sources */,
 				87800F062B20540D009170E9 /* AOC6.swift in Sources */,
 				87800F042B1F0011009170E9 /* AOC5.swift in Sources */,
+				87800F1E2B25B0F1009170E9 /* AOC10.swift in Sources */,
 				87800F082B21A347009170E9 /* AOC7.swift in Sources */,
+				873F72402B26D94400A329EE /* AOC11.swift in Sources */,
 				87800F002B1B1004009170E9 /* AOC2.swift in Sources */,
 				87800EF72B19CA2F009170E9 /* main.swift in Sources */,
+				873F72572B279DF900A329EE /* DataStructures.swift in Sources */,
 				87800EFE2B19CA72009170E9 /* AOC1.swift in Sources */,
 				87800F022B1CFB85009170E9 /* AOC3.swift in Sources */,
 			);
@@ -317,6 +356,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		873F72432B26DAA800A329EE /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+		873F72462B26DAB900A329EE /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		873F724E2B26DCB500A329EE /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 873F72462B26DAB900A329EE /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		873F72502B26DCBC00A329EE /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 873F72432B26DAA800A329EE /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		873F72522B26DE5600A329EE /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 873F72462B26DAB900A329EE /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 87800EEB2B19CA2F009170E9 /* Project object */;
 }
